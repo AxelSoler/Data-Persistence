@@ -28,6 +28,9 @@ public class MainManager : MonoBehaviour
         m_maxScore = SaveSystem.LoadScore();
         m_maxPlayerName = SaveSystem.LoadPlayerName();
 
+        m_Points = 0;
+        ScoreText.text = $"Score : {PlayerData.GetPlayerName()}: {m_Points}";
+
         if (m_maxPlayerName != "")
         {
             MaxScoreText.text = $"Best Score : {m_maxPlayerName} : {m_maxScore}";

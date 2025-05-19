@@ -1,25 +1,19 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
+using TMPro;
 
 public class Menu : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
+    public TMP_InputField nameInputField;
 
     public void PlayGame()
     {
-        SceneManager.LoadScene(1);
-        // get player name from input
+        string playerName = nameInputField.text;
+        if (playerName != "")
+        {
+            PlayerData.SetPlayerName(playerName);
 
+            SceneManager.LoadScene(1);
+        }
     }
 }
